@@ -1,4 +1,7 @@
+fernetKey: ZDBTWXQ1RGtOWXN5T1V6ZmRMWXh3RTQ0Qm5yQ2pRdFI=
+secretKey: ZDBTWXQ1RGtOWXN5T1V6ZmRMWXh3RTQ0Qm5yQ2pRdFI=
 executor: KubernetesExecutor
+webserverSecretKey: 4820162d42b84f726cd78ce1d2cef4b4
 
 dags:
   gitSync:
@@ -7,13 +10,6 @@ dags:
     branch: main  # Optional: specify the branch if not the default one
     rev: HEAD     # Syncs the latest commit from the main branch
     depth: 1
-    # Adding GIT_SYNC_SUBPATH environment variable to point to the specific path in the repo
-    env: 
-      - name: GIT_SYNC_SUBPATH
-        value: "Data engineering/dags"  # Subpath where the DAGs are located within the repo
+    maxFailures: 0
+    path: "dags"  # Subpath where the DAGs are located within the repo
 
-# Encryption and webserver keys
-airflow:
-  fernetKey: ZDBTWXQ1RGtOWXN5T1V6ZmRMWXh3RTQ0Qm5yQ2pRdFI=
-
-secretKey: ZDBTWXQ1RGtOWXN5T1V6ZmRMWXh3RTQ0Qm5yQ2pRdFI=
