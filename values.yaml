@@ -11,5 +11,5 @@ dags:
     rev: HEAD     # Syncs the latest commit from the main branch
     depth: 1
     maxFailures: 0
-    path: "dags"  # Subpath where the DAGs are located within the repo
+    subPath: "dags"  # Subpath where the DAGs are located within the repo
 
